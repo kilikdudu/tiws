@@ -288,7 +288,7 @@ public class WebSocketClient {
 
     private SSLSocketFactory getSSLSocketFactory() throws NoSuchAlgorithmException, KeyManagementException {
         SSLContext context = SSLContext.getInstance("TLS");
-        context.init(null, sTrustManagers, null);
+        context.init(null, new TrustManager[] { new BlindTrustManager() }, null);
         return context.getSocketFactory();
     }
 }

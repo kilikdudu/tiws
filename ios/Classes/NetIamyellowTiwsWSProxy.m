@@ -94,7 +94,7 @@
         }
     }
 
-    WS = [[SRWebSocket alloc] initWithURLRequest:req protocols:protocols];
+    WS = [[SRWebSocket alloc] initWithURLRequest:req protocols:protocols allowsUntrustedSSLCertificates:YES];
     WS.delegate = self;
     [WS open];
 }
